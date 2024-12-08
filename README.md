@@ -6,7 +6,7 @@ The design was created by [this Figma file](https://www.figma.com/community/file
 
 ## Preview
 
-![Preview Image](https://github.com/MohammedMMCInfinity-Hub-Shoes-Landing-Page/blob/main/preview.png?raw=true)
+![Preview Image](https://github.com/MohammedMMC/Infinity-Hub-Shoes-Landing-Page/blob/main/preview.png?raw=true)
 
 ## Live Demo
 
