@@ -251,9 +251,17 @@ footer .footerSection:not(:nth-child(1)) .links a {
 
 .scroll-hidden {
   opacity: 0;
-  transition: opacity 0.6s cubic-bezier(0.81, 0.04, 1, 0.44);
+  filter: blur(3px);
+  transition: opacity 1s ease-in-out, filter 0.6s ease-in-out;
 }
 
 .scroll-show {
   opacity: 1;
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion) {
+  .scroll-hidden {
+    transition: none;
+  }
 }
