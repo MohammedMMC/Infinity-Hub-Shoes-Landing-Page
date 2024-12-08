@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap");
+
+:root {
+  --background-color: #f6f4ed;
+  --primary-color: #fdc400;
+  --secondary-color: #7b29dd;
+  --text-color: #1e1e1e;
+  --bg-linear: linear-gradient(115deg, #7b29dd -10%, #fdc400 110%);
+
+  --xcus-padding: calc(20px + 3vw);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "ClashDisplay-Regular", sans-serif;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: "ClashDisplay-Semibold", sans-serif;
+  letter-spacing: 1px;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 2px;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px -5px var(--primary-color);
+}
+
+nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px var(--xcus-padding);
+  z-index: 1;
+}
+
+nav .menutoggle {
+  display: none;
+  cursor: pointer;
+}
+
+nav .title {
+  font-family: "Clicker Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xx-large;
+  color: var(--secondary-color);
+  text-wrap: nowrap;
+}
+
+nav .links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(10px + 2vw);
+}
+
+nav .links a {
+  text-decoration: none;
+  text-wrap: nowrap;
+}
+
+nav .auth {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .auth button:nth-child(1) {
+  background-color: transparent;
+  text-decoration: underline;
+  box-shadow: none;
+}
+
+footer {
+  padding: 2cm var(--xcus-padding);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(20px + 3vw);
+}
+
+footer .footerSection:has(:nth-child(1), :nth-child(4)) {
+  max-width: calc(200px + 10vw);
+}
+
+footer .footerSection:nth-child(1) h1 {
+  font-family: "Clicker Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.2rem;
+  color: var(--secondary-color);
+}
+
+footer .footerSection:nth-child(1) p {
+  margin-bottom: 0.8cm;
+}
+
+footer .footerSection:nth-child(1) .icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: calc(5px + 1vw);
+}
+
+footer .footerSection:nth-child(1) .icons a {
+  transition: transform 250ms;
+}
+
+footer .footerSection:nth-child(1) .icons a:hover {
+  transform: scale(110%);
+}
+
+footer .footerSection:not(:nth-child(1)) h1 {
+  font-family: "ClashDisplay-Semibold", sans-serif;
+  font-size: 1.35rem;
+  color: var(--secondary-color);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8cm;
+}
+
+footer .footerSection:not(:nth-child(1)) .links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.4cm;
+}
+
+footer .footerSection:not(:nth-child(1)) .links a {
+  text-decoration: none;
+}
+
+/* Background Styles */
+
+.bg-nhsr1,
+.bg-nhsr3 {
+  --size: 800px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  left: calc(-1 * var(--size) / 2);
+  top: calc(-1 * var(--size) / 2);
+  width: var(--size);
+  height: var(--size);
+  filter: blur(3cm);
+  border-radius: 50%;
+  opacity: 15%;
+  z-index: -1;
+}
+
+.bg-nhsr2 {
+  --size: 500px;
+  background-color: var(--primary-color);
+  position: absolute;
+  right: calc(15vw - 5cm);
+  bottom: 5vw;
+  width: var(--size);
+  height: var(--size);
+  filter: blur(3cm);
+  border-radius: 50%;
+  opacity: 18%;
+  z-index: -1;
+}
+
+.bg-nhsr4 {
+  --size: 400px;
+  background-color: var(--primary-color);
+  position: absolute;
+  right: calc(15vw - 5cm);
+  top: auto;
+  bottom: auto;
+  width: var(--size);
+  height: var(--size);
+  filter: blur(3cm);
+  border-radius: 50%;
+  opacity: 18%;
+  z-index: -1;
+}
+
+/* Medias */
+
+@media (max-width: 1050px) {
+  nav .links {
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff30;
+    backdrop-filter: blur(6px);
+    margin: 0 var(--xcus-padding);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 0%;
+    padding: 20px 0;
+    border: 2px solid var(--secondary-color);
+    transition: width 0.8s cubic-bezier(0.02, 0.59, 0.58, 1),
+      padding 0.8s cubic-bezier(0.02, 0.59, 0.58, 1);
+    display: none;
+  }
+  nav .links.active {
+    padding: 20px;
+    width: calc(100% - var(--xcus-padding) * 2);
+  }
+  nav .links a {
+    text-align: center;
+    width: 100%;
+  }
+  nav .links a:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  nav .menutoggle {
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    align-content: center;
+  }
+}
+
+/* Scroll Animations */
+
+.scroll-hidden {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.81, 0.04, 1, 0.44);
+}
+
+.scroll-show {
+  opacity: 1;
+}
